@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Usama Hamayun — Robotics &amp; Mechatronics Engineer</title>
+<meta name="description" content="Robotics &amp; mechatronics engineer — perception, RF systems and field-deployed autonomy. Drones, GPS-denied positioning, rail ADAS simulation, embedded RF.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23E9EDEA'/%3E%3Cpath d='M16 26V12M16 12L9 5M16 12L23 5M12.5 8.5L16 12L19.5 8.5' stroke='%23DC5A11' stroke-width='2.4' fill='none' stroke-linecap='square'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E9EDEA;
+  --panel:#F5F7F4;
+  --ink:#14201F;
+  --muted:#5C6B66;
+  --line:#C4CEC8;
+  --line-soft:#D7DEDA;
+  --accent:#DC5A11;
+  --measure:#0C6B5D;
+  --grid:rgba(20,32,31,.055);
+  --maxw:1100px;
+  --font-display:"Archivo",system-ui,sans-serif;
+  --font-body:"IBM Plex Sans",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--accent);color:#fff}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:var(--maxw);margin:0 auto;
+  display:flex;align-items:center;gap:1.5rem;
+  padding:.7rem 1.5rem;
+}
+.nav-mark{
+  font-family:var(--font-mono);font-size:.78rem;font-weight:500;
+  letter-spacing:.08em;text-decoration:none;white-space:nowrap;
+}
+.nav-mark b{color:var(--accent);font-weight:500}
+.nav-links{display:flex;gap:1.4rem;margin-left:auto}
+.nav-links a{
+  font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;
+  text-transform:uppercase;text-decoration:none;color:var(--muted);
+}
+.nav-links a:hover{color:var(--ink)}
+.chip{
+  font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;
+  border:1px solid var(--measure);color:var(--measure);
+  padding:.22rem .55rem;border-radius:2px;white-space:nowrap;
+}
+.chip::before{content:"●";margin-right:.45rem;font-size:.55rem;vertical-align:1px}
+@media(max-width:760px){.nav-links{display:none}}
+
+/* ---------- hero ---------- */
+.hero{
+  border-bottom:1px solid var(--line);
+  background-image:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+.hero-inner{
+  max-width:var(--maxw);margin:0 auto;
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:2rem;align-items:end;
+  padding:4.5rem 1.5rem 3rem;
+}
+.eyebrow{
+  font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem;
+}
+.eyebrow b{color:var(--accent);font-weight:500}
+h1{
+  font-family:var(--font-display);font-weight:800;
+  font-size:clamp(2.6rem,6vw,4.4rem);
+  line-height:.98;letter-spacing:-.02em;
+  text-transform:uppercase;
+}
+h1 .thin{font-weight:500;color:var(--muted)}
+.hero-thesis{
+  margin-top:1.4rem;max-width:34rem;
+  font-size:1.08rem;line-height:1.65;color:var(--ink);
+}
+.hero-meta{
+  margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;
+  font-family:var(--font-mono);font-size:.75rem;color:var(--muted);
+  letter-spacing:.04em;
+}
+.hero-meta span::before{content:"—";color:var(--line);margin-right:.6rem}
+.hero-meta span:first-child::before{content:""}
+.hero-cta{margin-top:2rem;display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{
+  font-family:var(--font-mono);font-size:.78rem;letter-spacing:.08em;
+  text-transform:uppercase;text-decoration:none;
+  padding:.7rem 1.2rem;border:1px solid var(--ink);
+  transition:background .15s,color .15s;
+}
+.btn-primary{background:var(--ink);color:var(--paper)}
+.btn-primary:hover{background:var(--accent);border-color:var(--accent)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.hero-fig{padding-bottom:.4rem}
+.hero-fig figcaption{
+  font-family:var(--font-mono);font-size:.68rem;color:var(--muted);
+  letter-spacing:.06em;margin-top:.6rem;text-align:right;
+}
+.range-svg{width:100%;height:auto;display:block}
+.range-svg .ring{stroke:var(--line);fill:none;stroke-width:1}
+.range-svg .ring-lab,.range-svg .axis-lab{font-family:var(--font-mono);font-size:10px;fill:var(--muted)}
+.range-svg .arc{fill:none;stroke-width:2.5;stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1.4s ease-out forwards}
+.range-svg .arc.wifi{stroke:var(--accent);animation-delay:.3s}
+.range-svg .arc.ble{stroke:var(--measure);animation-delay:.7s}
+.range-svg .arc-lab{font-family:var(--font-mono);font-size:11px;font-weight:500;opacity:0;animation:fadein .5s ease-out forwards}
+.range-svg .arc-lab.wifi{fill:var(--accent);animation-delay:1.4s}
+.range-svg .arc-lab.ble{fill:var(--measure);animation-delay:1.7s}
+.range-svg .mast{stroke:var(--ink);stroke-width:2;fill:none}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fadein{to{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+  .range-svg .arc{stroke-dashoffset:0}
+  .range-svg .arc-lab{opacity:1}
+}
+@media(max-width:860px){
+  .hero-inner{grid-template-columns:1fr;padding-top:3rem}
+  .hero-fig{max-width:420px}
+}
+
+/* ---------- sections ---------- */
+.section{max-width:var(--maxw);margin:0 auto;padding:4rem 1.5rem 1rem}
+.section-head{
+  display:flex;align-items:baseline;gap:1.2rem;
+  border-bottom:2px solid var(--ink);padding-bottom:.7rem;margin-bottom:0;
+}
+.section-head .tag{
+  font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);
+}
+.section-head h2{
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(1.3rem,2.6vw,1.7rem);text-transform:uppercase;
+  letter-spacing:-.01em;
+}
+.section-head .count{
+  margin-left:auto;font-family:var(--font-mono);font-size:.72rem;color:var(--muted);
+}
+
+/* ---------- project entries ---------- */
+.entry{
+  display:grid;
+  grid-template-columns:190px minmax(0,1fr) 230px;
+  gap:2rem;
+  padding:2.4rem 0;
+  border-bottom:1px solid var(--line-soft);
+}
+.entry-meta{font-family:var(--font-mono);font-size:.74rem;color:var(--muted);line-height:2}
+.entry-meta .yr{color:var(--ink);font-weight:500;display:block}
+.entry-meta .org{display:block}
+.entry h3{
+  font-family:var(--font-display);font-weight:700;font-size:1.25rem;
+  letter-spacing:-.01em;margin-bottom:.55rem;line-height:1.25;
+}
+.entry p{color:var(--ink);max-width:36rem}
+.entry p + p{margin-top:.6rem}
+.tags{margin-top:1rem;display:flex;flex-wrap:wrap;gap:.4rem}
+.tags span{
+  font-family:var(--font-mono);font-size:.66rem;letter-spacing:.05em;
+  border:1px solid var(--line);color:var(--muted);
+  padding:.18rem .5rem;background:var(--panel);
+}
+.readout{
+  border-top:2px solid var(--measure);
+  padding-top:.8rem;align-self:start;
+  position:relative;
+}
+.readout::before,.readout::after{
+  content:"";position:absolute;top:-2px;width:2px;height:8px;background:var(--measure);
+}
+.readout::before{left:0}
+.readout::after{right:0}
+.readout .val{
+  font-family:var(--font-mono);font-weight:500;
+  font-size:1.9rem;line-height:1.05;color:var(--measure);
+  letter-spacing:-.02em;
+}
+.readout .unit{font-size:1rem;color:var(--muted);margin-left:.2rem}
+.readout .cap{
+  display:block;margin-top:.5rem;
+  font-family:var(--font-mono);font-size:.68rem;line-height:1.5;
+  color:var(--muted);letter-spacing:.03em;
+}
+@media(max-width:900px){
+  .entry{grid-template-columns:1fr;gap:1.1rem;padding:2rem 0}
+  .entry-meta{display:flex;gap:1.2rem;line-height:1.6}
+  .readout{max-width:260px}
+}
+
+/* ---------- earlier work ---------- */
+.earlier{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:0 3rem;padding:1.2rem 0 2rem;
+}
+.earlier-item{
+  border-bottom:1px solid var(--line-soft);
+  padding:1rem 0;display:flex;gap:1rem;align-items:baseline;
+}
+.earlier-item .yr{font-family:var(--font-mono);font-size:.7rem;color:var(--muted);min-width:56px}
+.earlier-item .what b{font-weight:600;font-size:.95rem}
+.earlier-item .what span{display:block;font-size:.86rem;color:var(--muted)}
+
+/* ---------- capabilities ---------- */
+.caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border-left:1px solid var(--line-soft)}
+.cap{border-right:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);padding:1.6rem 1.4rem;background:var(--panel)}
+.cap h4{
+  font-family:var(--font-mono);font-size:.72rem;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:.8rem;
+}
+.cap ul{list-style:none}
+.cap li{font-size:.9rem;padding:.28rem 0;border-bottom:1px dashed var(--line-soft)}
+.cap li:last-child{border-bottom:none}
+.cap li em{font-style:normal;color:var(--muted);font-size:.8rem}
+.caps-note{
+  font-family:var(--font-mono);font-size:.72rem;color:var(--muted);
+  padding:1rem 0 0;letter-spacing:.03em;
+}
+
+/* ---------- credentials ---------- */
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:3rem;padding:2rem 0 1rem}
+.cred h4{
+  font-family:var(--font-mono);font-size:.72rem;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+  margin-bottom:1rem;
+}
+.cred-item{padding:.9rem 0;border-top:1px solid var(--line-soft)}
+.cred-item b{display:block;font-weight:600;font-size:.98rem}
+.cred-item span{color:var(--muted);font-size:.88rem}
+@media(max-width:760px){.creds{grid-template-columns:1fr;gap:1.5rem}}
+
+/* ---------- contact ---------- */
+.contact{
+  max-width:var(--maxw);margin:3rem auto 0;padding:0 1.5rem 4rem;
+}
+.contact-box{
+  border:1px solid var(--ink);background:var(--panel);
+  padding:3rem clamp(1.5rem,4vw,3rem);
+  background-image:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+.contact-box .tag{
+  font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);
+}
+.contact-box h2{
+  font-family:var(--font-display);font-weight:800;text-transform:uppercase;
+  font-size:clamp(1.8rem,4.5vw,3rem);letter-spacing:-.02em;line-height:1.05;
+  margin:.8rem 0 1rem;max-width:24ch;
+}
+.contact-box p{max-width:38rem;color:var(--ink)}
+.contact-links{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.8rem}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line)}
+.foot-inner{
+  max-width:var(--maxw);margin:0 auto;padding:1.2rem 1.5rem;
+  display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between;
+  font-family:var(--font-mono);font-size:.68rem;color:var(--muted);letter-spacing:.05em;
+}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(10px);transition:opacity .55s ease,transform .55s ease}
+.reveal.on{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="#top"><b>UH</b> / ROBOTICS · RF · FIELD</a>
+    <div class="nav-links">
+      <a href="#work">Field log</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <span class="chip">AVAILABLE 09 / 2026</span>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <p class="eyebrow"><b>Usama Hamayun</b> — La Carolina, Jaén, Spain · Full EU work permit</p>
+      <h1>Robotics &amp;<br>Mechatronics<br><span class="thin">Engineer</span></h1>
+      <p class="hero-thesis">
+        Perception, RF systems and field-deployed autonomy. Six years building
+        drones, robots and radio links that get taken outside and measured —
+        not just simulated. From bare-metal firmware to Isaac Sim, with the
+        link-budget math in between.
+      </p>
+      <div class="hero-meta">
+        <span>R&amp;D Engineer · Somnum Technologies</span>
+        <span>Perception &amp; Simulation · Rail ADAS programme</span>
+        <span>M.Sc. Robotics · UPC Barcelona</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#work">Read the field log</a>
+        <a class="btn btn-ghost" href="mailto:usama.humayun1@gmail.com">Get in touch</a>
+      </div>
+    </div>
+    <figure class="hero-fig" aria-label="Plan-view diagram of measured drone detection ranges">
+      <svg class="range-svg" viewBox="0 0 520 500" role="img" aria-labelledby="rangeTitle">
+        <title id="rangeTitle">Passive RF drone detection: Wi-Fi Remote ID received at 4,654 m, Bluetooth at 4,077 m</title>
+        <!-- range rings, 1 km per ring -->
+        <path class="ring" d="M 180 470 A 80 80 0 0 1 340 470"/>
+        <path class="ring" d="M 100 470 A 160 160 0 0 1 420 470"/>
+        <path class="ring" d="M 20 470 A 240 240 0 0 1 500 470"/>
+        <path class="ring" stroke-dasharray="3 5" d="M -60 470 A 320 320 0 0 1 580 470"/>
+        <path class="ring" stroke-dasharray="3 5" d="M -140 470 A 400 400 0 0 1 660 470"/>
+        <text class="ring-lab" x="304" y="398">1 km</text>
+        <text class="ring-lab" x="344" y="329">2 km</text>
+        <text class="ring-lab" x="384" y="260">3 km</text>
+        <text class="ring-lab" x="424" y="191">4 km</text>
+        <!-- measured arcs, 60° sectors at true scale (80 px = 1 km) -->
+        <path class="arc wifi" d="M 21 185 A 372 372 0 0 1 387 120"/>
+        <path class="arc ble"  d="M 50 220 A 326 326 0 0 1 372 164"/>
+        <text class="arc-lab wifi" x="292" y="92">WI-FI RID · 4,654 m*</text>
+        <text class="arc-lab ble"  x="380" y="160">BLE RID · 4,077 m</text>
+        <!-- antenna mast -->
+        <path class="mast" d="M260 470 V440 M260 440 L246 424 M260 440 L274 424 M252 432 L260 440 L268 432"/>
+        <text class="axis-lab" x="286" y="466">RX · 14 dBi sector + LNA</text>
+      </svg>
+      <figcaption>FIG. 01 — PASSIVE DRONE REMOTE-ID DETECTION, FIELD-MEASURED. *TEST-BOUNDARY LIMITED, NOT LINK LIMIT.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+  <section class="section" id="work">
+    <div class="section-head">
+      <span class="tag">Field log</span>
+      <h2>Selected work</h2>
+      <span class="count">2019 — 2026</span>
+    </div>
+
+    <article class="entry reveal">
+      <div class="entry-meta">
+        <span class="yr">2025 — 2026</span>
+        <span class="org">Somnum Technologies<br>R&amp;D · lead engineer</span>
+      </div>
+      <div>
+        <h3>Passive RF drone detection — Remote ID at multi-kilometre range</h3>
+        <p>
+          Dual-receiver system that passively detects drone Remote ID broadcasts on
+          Bluetooth (1M + Long Range Coded PHY) and Wi-Fi 2.4 GHz, running on
+          Nordic nRF53 / nRF70 front-ends with edge processing on Jetson. I own the
+          full chain: antenna selection and link budgets, receiver firmware,
+          the MQTT ingest / detection / live-map pipeline, and the field-test
+          methodology with GPS ground truth.
+        </p>
+        <p>
+          The engineering that mattered wasn't range for free — it was diagnosing an
+          overloaded front-end and fixing it with a 6 dB pad after the LNA
+          (a 21× recovery in packet density), and proving detection performance
+          against a commercial reference receiver in controlled simultaneous trials.
+        </p>
+        <div class="tags">
+          <span>nRF5340</span><span>nRF7002</span><span>BLE Coded PHY</span>
+          <span>Link budgets</span><span>Jetson</span><span>MQTT</span><span>Python</span>
+        </div>
+      </div>
+      <div class="readout">
+        <span class="val">4,654<span class="unit">m</span></span>
+        <span class="cap">Wi-Fi Remote ID detection range, field-measured (test-boundary limited). BLE: 4,077 m.</span>
+      </div>
+    </article>
+
+    <article class="entry reveal">
+      <div class="entry-meta">
+        <span class="yr">2025 — 2026</span>
+        <span class="org">SmartIT LDA<br>Rail ADAS programme<br>Perception &amp; simulation</span>
+      </div>
+      <div>
+        <h3>Closed-loop autonomous tram simulation — Isaac Sim ↔ ADAS stack</h3>
+        <p>
+          Simulation-in-the-loop validation for a production rail ADAS stack: a
+          photoreal tram scene in NVIDIA Isaac Sim publishes camera and LiDAR
+          streams over ROS 2, bridge nodes carry them over ZMQ into a
+          15-container perception and collision-checking stack on NVIDIA IGX,
+          and the resulting brake verdicts are fed back to the simulated tram's
+          physics — a true closed loop, running with zero container restarts.
+        </p>
+        <p>
+          Along the way: ported OpenCV with CUDA support to a Blackwell-generation
+          GPU (sm_120) under an ABI-locked toolchain, and fixed a production
+          serialization bug in the stack's wire protocol.
+        </p>
+        <div class="tags">
+          <span>Isaac Sim</span><span>ROS 2</span><span>ZMQ</span><span>Docker</span>
+          <span>CUDA / TensorRT</span><span>C++</span><span>NVIDIA IGX</span>
+        </div>
+      </div>
+      <div class="readout">
+        <span class="val">15<span class="unit">containers</span></span>
+        <span class="cap">Full ADAS stack in closed loop with simulated physics — sensor in, brake command out.</span>
+      </div>
+    </article>
+
+    <article class="entry reveal">
+      <div class="entry-meta">
+        <span class="yr">2026</span>
+        <span class="org">Somnum Technologies<br>System architect</span>
+      </div>
+      <div>
+        <h3>GPS-denied positioning for firefighters — architecture &amp; PoC</h3>
+        <p>
+          System design for tracking firefighters inside burning buildings, where GNSS
+          doesn't exist and RF behaves badly. Wearable node: STM32-based fusion MCU
+          logging a tactical-grade and a consumer-grade IMU simultaneously, plus
+          barometer — dead-reckoning with zero-velocity updates computed onboard so
+          the node stays useful even if comms drop. A static edge node (Jetson Orin)
+          anchors the absolute frame via BLE angle-of-arrival and GNSS-RTK, and runs
+          global fusion.
+        </p>
+        <p>
+          Long-range telemetry on licensed 868 MHz (3 W authorization) — where the real
+          win is duty-cycle relief, not raw power. Designed to a ≤1.5 m 3D accuracy
+          spec with a deliberate PoC-to-product upgrade path (BLE AoA → UWB AoA).
+        </p>
+        <div class="tags">
+          <span>Sensor fusion</span><span>IMU / ZUPT</span><span>BLE AoA</span>
+          <span>STM32</span><span>868 MHz / SX1262</span><span>GNSS-RTK</span><span>Jetson Orin</span>
+        </div>
+      </div>
+      <div class="readout">
+        <span class="val">≤1.5<span class="unit">m</span></span>
+        <span class="cap">Absolute 3D accuracy spec, indoor, no GNSS — architecture designed to reach it.</span>
+      </div>
+    </article>
+
+    <article class="entry reveal">
+      <div class="entry-meta">
+        <span class="yr">2024 — 2025</span>
+        <span class="org">Wildfire-response<br>drone programme</span>
+      </div>
+      <div>
+        <h3>Autonomous drone dock — full ground control station integration</h3>
+        <p>
+          Took a commercial drone dock and enterprise drone that only spoke to their
+          vendor's cloud, and made them fully autonomous on local infrastructure:
+          reverse-engineered the dock's MQTT command protocol from its companion app,
+          redirected the dock firmware's broker to local edge compute, built a custom
+          Android ground-station app running on the drone's own remote controller
+          (takeoff-to-mission confirmed), and brought up RTSP video and a thermal-imagery
+          pipeline. Centimetre-level positioning via NTRIP corrections from Spain's
+          national GNSS network.
+        </p>
+        <div class="tags">
+          <span>MQTT</span><span>Android / Kotlin</span><span>Reverse engineering</span>
+          <span>RTSP</span><span>NTRIP / RTK</span><span>Jetson</span><span>DJI ecosystem</span>
+        </div>
+      </div>
+      <div class="readout">
+        <span class="val">Dock→air</span>
+        <span class="cap">Vendor-cloud-free: local broker, custom GCS app, RTK corrections, live video.</span>
+      </div>
+    </article>
+
+    <article class="entry reveal">
+      <div class="entry-meta">
+        <span class="yr">2024 — 2025</span>
+        <span class="org">Environmental<br>sensing network</span>
+      </div>
+      <div>
+        <h3>LoRa sensor network — nine nodes to an eight-channel gateway</h3>
+        <p>
+          Field sensor network for early wildfire detection: ESP-based nodes with
+          SX1278 radios reporting to an SX1303 eight-channel concentrator on a
+          Raspberry Pi gateway. Diagnosed a fundamental architecture mismatch between
+          single-channel point-to-point firmware and the multi-channel LoRaWAN
+          concentrator, and planned the migration to a proper ChirpStack v4 LoRaWAN
+          stack — including the unglamorous parts: GPIO library API breaks and
+          power-supply undervoltage on the concentrator.
+        </p>
+        <div class="tags">
+          <span>LoRa / LoRaWAN</span><span>SX1278 / SX1303</span><span>ChirpStack</span>
+          <span>ESP8285</span><span>Raspberry Pi</span><span>C / C++</span>
+        </div>
+      </div>
+      <div class="readout">
+        <span class="val">9<span class="unit">nodes</span></span>
+        <span class="cap">433 MHz field network, 8-channel gateway, full LoRaWAN migration plan.</span>
+      </div>
+    </article>
+
+    <article class="entry reveal">
+      <div class="entry-meta">
+        <span class="yr">2025</span>
+        <span class="org">Cultural-heritage<br>side project</span>
+      </div>
+      <div>
+        <h3>GPS tracker for Semana Santa processional floats</h3>
+        <p>
+          A tracker that publishes the live position of multi-tonne religious floats
+          moving through crowded medieval streets. The constraint that shaped everything:
+          the cellular module shares one RF front-end between GNSS and LTE, so the
+          firmware runs a strict sequential fix-then-transmit cycle using the modem's
+          native MQTT stack — no Linux networking in the loop. Small, cheap, and it
+          worked on procession day.
+        </p>
+        <div class="tags">
+          <span>SIM7080G</span><span>NB-IoT / Cat-M</span><span>AT / MQTT</span>
+          <span>Raspberry Pi Zero</span><span>Python</span>
+        </div>
+      </div>
+      <div class="readout">
+        <span class="val">1<span class="unit">RF chain</span></span>
+        <span class="cap">GNSS and LTE time-sharing a single front-end — solved in firmware, not hardware.</span>
+      </div>
+    </article>
+
+    <div class="section-head" style="margin-top:3rem">
+      <span class="tag">Archive</span>
+      <h2>Earlier work &amp; research</h2>
+    </div>
+    <div class="earlier reveal">
+      <div class="earlier-item">
+        <span class="yr">2023</span>
+        <div class="what"><b>M.Sc. thesis — multi-robot exploration</b>
+        <span>Centralized nonlinear MPC in CasADi for coordinated exploration.</span></div>
+      </div>
+      <div class="earlier-item">
+        <span class="yr">2023</span>
+        <div class="what"><b>Task &amp; motion planning on PAL TIAGo</b>
+        <span>PDDL task planning coupled to sampling-based motion planning (OMPL), UPC internship.</span></div>
+      </div>
+      <div class="earlier-item">
+        <span class="yr">2023</span>
+        <div class="what"><b>Safety manager for AgileX Scout Mini</b>
+        <span>Variance-gated confidence filtering on ROS 2 Nav2.</span></div>
+      </div>
+      <div class="earlier-item">
+        <span class="yr">2022</span>
+        <div class="what"><b>Drone RL in MuJoCo</b>
+        <span>PPO / DDPG attitude control experiments, OpenAI Baselines.</span></div>
+      </div>
+      <div class="earlier-item">
+        <span class="yr">2019 — 22</span>
+        <div class="what"><b>Custom PX4 airframes with RTK-GNSS</b>
+        <span>Design, build and tuning of survey drones — six years of flight ops since.</span></div>
+      </div>
+      <div class="earlier-item">
+        <span class="yr">2019</span>
+        <div class="what"><b>IEEE publication — DDPG UAV attitude control</b>
+        <span>First author, IEEE C-CODE 2019. Deep RL for quadrotor attitude control.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="capabilities">
+    <div class="section-head">
+      <span class="tag">Spec sheet</span>
+      <h2>Capabilities</h2>
+    </div>
+    <div class="caps reveal" style="margin-top:2rem">
+      <div class="cap">
+        <h4>Languages</h4>
+        <ul>
+          <li>C++ <em>— daily, production</em></li>
+          <li>Python <em>— daily, production</em></li>
+          <li>Kotlin / Java <em>— Android, working</em></li>
+          <li>MATLAB, Bash <em>— working</em></li>
+        </ul>
+      </div>
+      <div class="cap">
+        <h4>Robotics &amp; simulation</h4>
+        <ul>
+          <li>ROS 2, Nav2</li>
+          <li>NVIDIA Isaac Sim</li>
+          <li>PX4 / ArduPilot ecosystems</li>
+          <li>OMPL, CasADi / NMPC</li>
+          <li>MuJoCo, Gazebo</li>
+        </ul>
+      </div>
+      <div class="cap">
+        <h4>RF &amp; positioning</h4>
+        <ul>
+          <li>Link budgets, antenna chains, LNAs</li>
+          <li>BLE (incl. Coded PHY), Wi-Fi, LoRa</li>
+          <li>BLE AoA, GNSS-RTK / NTRIP</li>
+          <li>IMU dead-reckoning, sensor fusion</li>
+          <li>Field-test design with ground truth</li>
+        </ul>
+      </div>
+      <div class="cap">
+        <h4>Embedded &amp; edge</h4>
+        <ul>
+          <li>STM32, nRF53, ESP32-class MCUs</li>
+          <li>Jetson (Nano → Orin), NVIDIA IGX</li>
+          <li>CUDA / TensorRT integration</li>
+          <li>Docker, ZMQ, MQTT pipelines</li>
+          <li>Linux bring-up &amp; debugging</li>
+        </ul>
+      </div>
+    </div>
+    <p class="caps-note">HONEST GAPS, STATED UP FRONT: no shipped MoveIt2, no ground-up SLAM authoring, no C#/.NET. I integrate and field-prove systems; I don't claim to have written a physics engine.</p>
+  </section>
+
+  <section class="section" id="credentials">
+    <div class="section-head">
+      <span class="tag">Records</span>
+      <h2>Credentials</h2>
+    </div>
+    <div class="creds reveal">
+      <div class="cred">
+        <h4>Education</h4>
+        <div class="cred-item">
+          <b>M.Sc. Automatic Control &amp; Robotics</b>
+          <span>Universitat Politècnica de Catalunya (UPC), Barcelona</span>
+        </div>
+        <div class="cred-item">
+          <b>B.Eng. Mechatronics</b>
+          <span>Air University, Islamabad — Best Final-Year Project Award</span>
+        </div>
+      </div>
+      <div class="cred">
+        <h4>Publication &amp; authorizations</h4>
+        <div class="cred-item">
+          <b>DDPG-based attitude control for UAVs</b>
+          <span>First author · IEEE C-CODE 2019</span>
+        </div>
+        <div class="cred-item">
+          <b>Licensed 868 MHz operation, 3 W</b>
+          <span>Spain — enables duty-cycle-relieved long-range telemetry</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="contact" id="contact">
+  <div class="contact-box reveal">
+    <span class="tag">Contact</span>
+    <h2>Open to robotics roles from September 2026</h2>
+    <p>
+      Perception, field robotics, RF systems, hardware-adjacent engineering —
+      on-site in Spain / EU or remote. Full Spanish work and residence permit.
+      If you want references or the numbers behind any project above, ask; everything
+      here was measured, and I keep the field reports.
+    </p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:usama.humayun1@gmail.com">usama.humayun1@gmail.com</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/usamahamayun/" rel="me">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/usamahamayun1" rel="me">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <span>© 2026 USAMA HAMAYUN</span>
+    <span>PLAIN HTML/CSS · NO FRAMEWORK · HOSTED ON GITHUB PAGES</span>
+    <span>LAST FIELD TEST: 2026</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    els.forEach(function(e){ e.classList.add('on'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting){ en.target.classList.add('on'); io.unobserve(en.target); }
+    });
+  }, {threshold: 0.12});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>
