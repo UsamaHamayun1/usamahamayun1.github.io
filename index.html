@@ -200,6 +200,34 @@ h1 .thin{font-weight:500;color:var(--muted)}
   text-decoration:none;white-space:nowrap;
 }
 .earlier-item .code:hover{text-decoration:underline}
+
+/* ---------- field footage ---------- */
+.footage{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:1rem;padding:1.6rem 0 1rem;
+}
+.clip{display:block;text-decoration:none;border:1px solid var(--line);background:var(--panel)}
+.clip .thumb{position:relative;aspect-ratio:16/9;overflow:hidden}
+.clip .thumb img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  filter:saturate(.7) contrast(1.02);transition:filter .2s ease;
+}
+.clip:hover .thumb img{filter:saturate(1.05)}
+.clip .play{
+  position:absolute;right:.5rem;bottom:.5rem;
+  font-family:var(--font-mono);font-size:.6rem;letter-spacing:.08em;
+  background:var(--ink);color:var(--paper);padding:.2rem .45rem;
+}
+.clip:hover .play{background:var(--accent);color:#fff}
+.clip figcaption{padding:.55rem .7rem;border-top:1px solid var(--line)}
+.clip figcaption b{
+  display:block;font-family:var(--font-body);font-weight:600;
+  font-size:.82rem;color:var(--ink);line-height:1.35;
+}
+.clip figcaption span{
+  font-family:var(--font-mono);font-size:.62rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);
+}
 .readout{
   border-top:2px solid var(--measure);
   padding-top:.8rem;align-self:start;
@@ -408,7 +436,6 @@ footer{border-top:1px solid var(--line)}
         <div class="tags">
           <span>nRF5340</span><span>nRF7002</span><span>BLE Coded PHY</span>
           <span>Link budgets</span><span>Jetson</span><span>MQTT</span><span>Python</span>
-          <a class="repo" href="https://www.youtube.com/watch?v=rxsQxJlgUvE" target="_blank" rel="noopener">FOOTAGE ↗</a>
         </div>
       </div>
       <div class="readout">
@@ -570,17 +597,17 @@ footer{border-top:1px solid var(--line)}
       <div class="earlier-item">
         <span class="yr">2026</span>
         <div class="what"><b>Dendritic RL benchmarking</b>
-        <span>2.3× faster RL convergence via dendritic expansion, benchmarked on robot navigation. <a class="code" href="https://github.com/usamahamayun1/neuro-dynamic-navigation" target="_blank" rel="noopener">CODE ↗</a> <a class="code" href="https://www.youtube.com/watch?v=XwziC8jS4sw" target="_blank" rel="noopener">FOOTAGE ↗</a></span></div>
+        <span>2.3× faster RL convergence via dendritic expansion, benchmarked on robot navigation. <a class="code" href="https://github.com/usamahamayun1/neuro-dynamic-navigation" target="_blank" rel="noopener">CODE ↗</a></span></div>
       </div>
       <div class="earlier-item">
         <span class="yr">2023</span>
         <div class="what"><b>M.Sc. thesis — multi-robot exploration</b>
-        <span>Centralized nonlinear MPC in CasADi for coordinated exploration. <a class="code" href="https://github.com/usamahamayun1/Centralized-Predictive-Controller-For-MulitRobot-Systems" target="_blank" rel="noopener">CODE ↗</a> <a class="code" href="https://www.youtube.com/watch?v=xnGElq8q53w" target="_blank" rel="noopener">FOOTAGE ↗</a></span></div>
+        <span>Centralized nonlinear MPC in CasADi for coordinated exploration. <a class="code" href="https://github.com/usamahamayun1/Centralized-Predictive-Controller-For-MulitRobot-Systems" target="_blank" rel="noopener">CODE ↗</a></span></div>
       </div>
       <div class="earlier-item">
         <span class="yr">2023</span>
         <div class="what"><b>Task &amp; motion planning on PAL TIAGo</b>
-        <span>PDDL task planning coupled to sampling-based motion planning (OMPL), UPC internship. <a class="code" href="https://www.youtube.com/watch?v=WnLhgHQ9WEQ" target="_blank" rel="noopener">FOOTAGE ↗</a></span></div>
+        <span>PDDL task planning coupled to sampling-based motion planning (OMPL), UPC internship.</span></div>
       </div>
       <div class="earlier-item">
         <span class="yr">2023</span>
@@ -595,13 +622,51 @@ footer{border-top:1px solid var(--line)}
       <div class="earlier-item">
         <span class="yr">2019 — 22</span>
         <div class="what"><b>Custom PX4 airframes with RTK-GNSS</b>
-        <span>Design, build and tuning of survey drones, including a hydrogen fuel-cell endurance prototype — six years of flight ops since. <a class="code" href="https://www.youtube.com/watch?v=MPKCudXn5Fg" target="_blank" rel="noopener">FOOTAGE ↗</a></span></div>
+        <span>Design, build and tuning of survey drones, including a hydrogen fuel-cell endurance prototype — six years of flight ops since.</span></div>
       </div>
       <div class="earlier-item">
         <span class="yr">2019</span>
         <div class="what"><b>IEEE publication — DDPG UAV attitude control</b>
         <span>First author, IEEE C-CODE 2019. Deep RL for quadrotor attitude control.</span></div>
       </div>
+    </div>
+
+    <div class="section-head" style="margin-top:3rem">
+      <span class="tag">Footage</span>
+      <h2>Field footage</h2>
+      <span class="count">RECORDED ON SITE</span>
+    </div>
+    <div class="footage reveal">
+      <a class="clip" href="https://www.youtube.com/watch?v=rxsQxJlgUvE" target="_blank" rel="noopener">
+        <figure style="margin:0">
+        <div class="thumb"><img src="https://i.ytimg.com/vi/rxsQxJlgUvE/maxresdefault.jpg" alt="Drone detection at 3 km — live tracking" loading="lazy"><span class="play">▶ PLAY</span></div>
+        <figcaption><b>Drone detection at 3 km — live tracking</b><span>IDDRONE · FIELD TEST</span></figcaption>
+        </figure>
+      </a>
+      <a class="clip" href="https://www.youtube.com/watch?v=MPKCudXn5Fg" target="_blank" rel="noopener">
+        <figure style="margin:0">
+        <div class="thumb"><img src="https://i.ytimg.com/vi/MPKCudXn5Fg/hqdefault.jpg" alt="Hydrogen fuel-cell drone — final test run" loading="lazy"><span class="play">▶ PLAY</span></div>
+        <figcaption><b>Hydrogen fuel-cell drone — final test run</b><span>PX4 · FLIGHT OPS</span></figcaption>
+        </figure>
+      </a>
+      <a class="clip" href="https://www.youtube.com/watch?v=WnLhgHQ9WEQ" target="_blank" rel="noopener">
+        <figure style="margin:0">
+        <div class="thumb"><img src="https://i.ytimg.com/vi/WnLhgHQ9WEQ/maxresdefault.jpg" alt="TIAGo task and motion planning demo" loading="lazy"><span class="play">▶ PLAY</span></div>
+        <figcaption><b>TIAGo task &amp; motion planning demo</b><span>TAMP · PAL TIAGO</span></figcaption>
+        </figure>
+      </a>
+      <a class="clip" href="https://www.youtube.com/watch?v=xnGElq8q53w" target="_blank" rel="noopener">
+        <figure style="margin:0">
+        <div class="thumb"><img src="https://i.ytimg.com/vi/xnGElq8q53w/hqdefault.jpg" alt="Multi-robot NMPC — Gazebo simulation" loading="lazy"><span class="play">▶ PLAY</span></div>
+        <figcaption><b>Multi-robot NMPC — Gazebo simulation</b><span>M.SC. THESIS</span></figcaption>
+        </figure>
+      </a>
+      <a class="clip" href="https://www.youtube.com/watch?v=XwziC8jS4sw" target="_blank" rel="noopener">
+        <figure style="margin:0">
+        <div class="thumb"><img src="https://i.ytimg.com/vi/XwziC8jS4sw/maxresdefault.jpg" alt="DQN with dendritic optimization" loading="lazy"><span class="play">▶ PLAY</span></div>
+        <figcaption><b>DQN with dendritic optimization</b><span>RL BENCHMARKING</span></figcaption>
+        </figure>
+      </a>
     </div>
   </section>
 
